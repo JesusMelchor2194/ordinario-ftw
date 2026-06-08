@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<silent_hill_data>
+    <!-- Validación de usuarios -->
+    <usuarios>
+        <usuario>
+            <username>jesus_uv</username>
+            <rol>Administrador</rol>
+        </usuario>
+        <usuario>
+            <username>harry_mason</username>
+            <rol>Investigador</rol>
+        </usuario>
+    </usuarios>
+
+    <!-- Contenido para las tablas y filtros de la Wiki -->
+    <elementos>
+        <elemento tipo="monstruo">
+            <nombre>Air Screamer</nombre>
+            <ubicacion>Calles de Silent Hill</ubicacion>
+            <peligro>Bajo</peligro>
+        </elemento>
+        <elemento tipo="monstruo">
+            <nombre>Grey Child</nombre>
+            <ubicacion>Escuela Primaria Midwich</ubicacion>
+            <peligro>Medio</peligro>
+        </elemento>
+        <elemento tipo="arma">
+            <nombre>Pistola de Mano</nombre>
+            <ubicacion>Café 5to2</ubicacion>
+            <peligro>N/A</peligro>
+        </elemento>
+        <elemento tipo="monstruo">
+            <nombre>Pyramid Head</nombre>
+            <ubicacion>Desconocido (SH2)</ubicacion>
+            <peligro>Máximo</peligro>
+        </elemento>
+        <elemento tipo="arma">
+            <nombre>Tubo de Cañería</nombre>
+            <ubicacion>Callejón Inicial</ubicacion>
+            <peligro>N/A</peligro>
+        </elemento>
+    </elementos>
+</silent_hill_data>

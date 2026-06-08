@@ -4,22 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Silent Hill (videojuego) - Silent Hill Wiki</title>
-    <!-- Vinculación formal del CSS externo -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos integrados rápidos para la sección dinámica de JavaScript y XML */
+        .seccion-dinamica {
+            background: #1a1a1a; 
+            padding: 25px; 
+            margin-top: 40px; 
+            border-radius: 6px; 
+            border: 1px solid #333;
+        }
+        .seccion-dinamica h3 {
+            color: #dd2c00;
+            margin-top: 0;
+            font-size: 16px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+        .control-bloque {
+            margin-bottom: 20px;
+        }
+        .control-bloque input {
+            padding: 8px;
+            background: #2b2b2b;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 4px;
+        }
+        .btn-sh {
+            padding: 8px 15px;
+            background: #dd2c00;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        .btn-sh:hover {
+            background: #ff3d00;
+        }
+        .btn-filtro {
+            padding: 6px 12px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #555;
+            cursor: pointer;
+            margin-right: 5px;
+            border-radius: 4px;
+        }
+        .btn-filtro:hover {
+            background: #444;
+        }
+        .tabla-xml {
+            width: 100%;
+            margin-top: 15px;
+            border-collapse: collapse;
+            text-align: left;
+            color: #ddd;
+            font-size: 14px;
+        }
+        .tabla-xml th {
+            background: #2b2b2b;
+            padding: 10px;
+            border: 1px solid #444;
+        }
+        .tabla-xml td {
+            padding: 10px;
+            border: 1px solid #333;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Audio de fondo oculto en bucle infinito -->
     <audio src="assets/audio/menu.mp3" autoplay loop></audio>
 
-    <!-- Encabezado de la Wiki -->
     <header class="wiki-header">
         <h1>Silent Hill Wiki</h1>
     </header>
 
     <div class="wiki-container">
         
-        <!-- Menú de Navegación Estructural (Las 8 páginas requeridas) -->
         <nav class="wiki-nav">
             <h2>Contenido</h2>
             <ul>
@@ -34,16 +99,13 @@
             </ul>
         </nav>
 
-        <!-- Contenido Principal -->
         <main class="wiki-main">
             <article>
                 <h2 class="page-title">Silent Hill (videojuego)</h2>
 
-                <!-- Ficha Técnica (Infobox de Fandom) -->
                 <aside class="infobox">
                     <h3>Silent Hill (1999)</h3>
                     <div class="infobox-image-container">
-                        <!-- Portada americana original -->
                         <img src="assets/imagenes/SH1na.jpg" alt="Portada de Silent Hill Norteamérica" class="infobox-image">
                     </div>
                     
@@ -70,7 +132,6 @@
                     <div class="infobox-row"><span class="label">PEGI:</span> 15+</div>
                 </aside>
 
-                <!-- Texto de Presentación Traducido Oficialmente -->
                 <section class="intro-text">
                     <p class="disambiguation"><em>"Silent Hill" se refiere a múltiples temas. Para otros usos, ver Silent Hill.</em></p>
                     
@@ -80,21 +141,54 @@
                     
                     <p>Silent Hill 3 es una secuela directa ambientada diecisiete años después del juego, mientras que Silent Hill: Origins es una precuela que tiene lugar siete años antes. Silent Hill: Shattered Memories es una reinvención del juego ambientada en otro universo, compartiendo su premisa inicial. Ha recibido múltiples adaptaciones, incluyendo Play Novel: Silent Hill, una película estrenada en 2006, el juego móvil Silent Hill DX, y el próximo videojuego del mismo nombre desarrollado por Bloober Team.</p>
 
-                    <!-- Imagen Central de Harry Mason para equilibrar el espacio -->
                     <figure class="center-image-block">
                         <img src="assets/imagenes/FogSnow.jpg" alt="Harry Mason explorando las calles de Silent Hill cubiertas de niebla y nieve" class="wiki-center-img">
                         <figcaption>Harry Mason buscando a su hija Cheryl en medio de la densa niebla y nieve de Silent Hill.</figcaption>
                     </figure>
                 </section>
+
+                <section class="seccion-dinamica">
+                    <h3>Módulo Programático de Control (Validación XML y Filtros Asíncronos)</h3>
+                    
+                    <div class="control-bloque">
+                        <p><strong>Autenticación de Credenciales de Usuario (Validación contra XML):</strong></p>
+                        <input type="text" id="username" placeholder="Ingresa usuario (Ej: jesus_uv)">
+                        <button class="btn-sh" onclick="validarUsuario()">Validar Acceso</button>
+                        <div id="resultado-validacion" style="margin-top: 8px; font-weight: bold;"></div>
+                    </div>
+                    
+                    <hr style="border: 1px solid #333; margin: 20px 0;">
+
+                    <div class="control-bloque">
+                        <p><strong>Filtro Avanzado de Datos Estructurados (Procesamiento XML en Tiempo Real):</strong></p>
+                        <button class="btn-filtro" onclick="cargarYFiltrarXML('todos')">Mostrar Todos</button>
+                        <button class="btn-filtro" onclick="cargarYFiltrarXML('monstruo')">Ver Monstruos</button>
+                        <button class="btn-filtro" onclick="cargarYFiltrarXML('arma')">Ver Armas</button>
+                        
+                        <table class="tabla-xml">
+                            <thead>
+                                <tr>
+                                    <th>Entidad Informativa</th>
+                                    <th>Categoría</th>
+                                    <th>Ubicación Registrada</th>
+                                    <th>Grado de Peligro</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabla-datos">
+                                </tbody>
+                        </table>
+                    </div>
+                </section>
+
             </article>
         </main>
 
     </div>
 
-    <!-- Pie de página formal -->
     <footer class="wiki-footer">
         <p>&copy; 2026 - Facultad de Economía e Informática - Universidad Veracruzana</p>
     </footer>
 
+    <script src="app.js"></script>
 </body>
 </html>
